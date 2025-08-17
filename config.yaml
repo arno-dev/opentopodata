@@ -1,0 +1,23 @@
+# An example of a config.yaml file showing all possible options. If no
+# config.yaml file exists, opentopodata will load example-config.yaml instead.
+
+# 400 error will be thrown above this limit.
+max_locations_per_request: 100
+
+
+# CORS header. Should be null for no CORS, '*' for all domains, or a url with
+# protocol, domain, and port ('https://api.example.com/'). Default is null.
+access_control_allow_origin: "*"
+
+
+datasets:
+
+# # A small testing dataset is included in the repo.
+# - name: test-dataset
+#   path: tests/data/datasets/test-etopo1-resampled-1deg/
+
+# Example config for 90 metre SRTM.
+- name: srtm90m
+  path: data/srtm90m/
+  filename_epsg: 4326
+  filename_tile_size: 1 
