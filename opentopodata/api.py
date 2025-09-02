@@ -490,6 +490,15 @@ def get_health_status():
         data = {"status": "SERVER_ERROR"}
         return jsonify(data), 500
 
+@app.route("/ready", methods=["GET", "HEAD"])
+def get_ready_():
+    """Status endpoint for e.g., uptime check or load balancing."""
+    try:
+        data = {"status": "OK"}
+        return jsonify(data)
+    except Exception:
+        data = {"status": "SERVER_ERROR"}
+        return jsonify(data), 500
 
 @app.route("/datasets", methods=["GET", "HEAD"])
 def get_datasets_info():
